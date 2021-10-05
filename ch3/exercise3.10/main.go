@@ -10,10 +10,10 @@ func comma(s string) string {
 	var n = len(s)
 	var buf bytes.Buffer
 	for i := 0; i < n; i++ {
-		buf.WriteByte(s[i])
-		if (len(s)-i)%3 == 1 && i != len(s)-1 {
+		if (n-i)%3 == 0 && i != 0 {
 			buf.WriteByte(',')
 		}
+		buf.WriteByte(s[i])
 	}
 	return buf.String()
 }
